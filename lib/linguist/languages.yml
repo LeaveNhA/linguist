@@ -1398,6 +1398,52 @@ DenizenScript:
   - ".dsc"
   tm_scope: source.denizenscript
   language_id: 435000929
+  # TODO: I'm pretty sure that the position (lexicographically)
+  # of the language is true. But it can be falsify by any
+  # method?? Reach me before PR, @LeaveNhA.
+  # My method is a Dg script:
+  # ```dg
+  # pyyaml = import '/yaml'
+  # requests = import '/requests'
+  # 'https://raw.githubusercontent.com/github/linguist/master/lib/linguist/languages.yml' |> requests.get |>.text |> pyyaml.safe_load |>.keys! |> (| (set ['Dg'])) |> list |> sorted
+  # ```
+Dg:
+  type: programming
+  tm_scope: none # TODO??
+  ace_mode: python # We can use it for now, right?
+  codemirror_mode: python
+  codemirror_mime_type: text/x-dg
+  color: "#db5855" # Get in touch with the original author.
+  #                  or use the obvious one.
+  extensions: # Python extensions??
+  - ".py"
+  - ".cgi"
+  - ".fcgi"
+  - ".gyp"
+  - ".gypi"
+  - ".lmi"
+  - ".py3"
+  - ".pyde"
+  - ".pyi"
+  - ".pyp"
+  - ".pyt"
+  - ".pyw"
+  - ".rpy"
+  - ".smk"
+  - ".spec"
+  - ".tac"
+  - ".wsgi"
+  - ".xpy"
+  filenames:
+  - riemann.config
+  language_id: 1992
+  interpreters: # These are valid interpreters since
+  #               the language itself is a Python module?
+  - python
+  - python2
+  - python3
+  aliases:
+  - doge
 Dhall:
   type: programming
   color: "#dfafff"
